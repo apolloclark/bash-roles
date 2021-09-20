@@ -15,7 +15,8 @@ fi
 if [[ -z "${DOCKER_VERSION-}" ]]; then
   # DOCKER_VERSION="19.03.8"
   DOCKER_VERSION=$(curl -sSL https://github.com/docker/docker-ce/releases \
-    | grep -F '/docker/docker-ce/releases/tag' | head -n 1 | cut -d'>' -f2 | cut -d'<' -f1
+    | grep -F '/docker/docker-ce/releases/tag' | head -n 2 | cut -d'>' -f2 \
+    | cut -d'<' -f1 | cut -b2-
   );
   echo "DOCKER_VERSION = ${DOCKER_VERSION}"
 fi

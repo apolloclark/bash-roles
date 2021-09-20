@@ -30,7 +30,10 @@ apt-get update
 apt-cache policy 'docker-ce'
 
 # set the package name, based on the Ubuntu version
-DOCKER_PACKAGE_VERSION="";
+DOCKER_PACKAGE_VERSION="(NULL)";
+if [ "$DISTRO_VERSION_MAJOR" -eq "20" ]; then
+  DOCKER_PACKAGE_VERSION="5:${DOCKER_VERSION}~3-0~ubuntu-focal";
+fi
 if [ "$DISTRO_VERSION_MAJOR" -eq "18" ]; then
   DOCKER_PACKAGE_VERSION="5:${DOCKER_VERSION}~3-0~ubuntu-bionic";
 fi

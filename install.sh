@@ -6,7 +6,7 @@ IFS=$'\n\t'
 
 
 # print info
-echo "[INFO] running: bash-roles / install.sh"
+echo "[INFO] bash-roles / install.sh"
 
 # install packages
 for PACKAGE_NAME in ${PACKAGES[@]}; do
