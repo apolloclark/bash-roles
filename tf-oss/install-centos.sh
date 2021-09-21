@@ -17,7 +17,7 @@ yum-config-manager \
   https://download.docker.com/linux/centos/docker-ce.repo
 
 # list out new newly available versions
-yum list 'docker-ce' --showduplicates
+yum list ${TF_PACKAGE} --showduplicates
 
-# install docker
-yum install -y ${TF_PACKAGE}-${DOCKER_VERSION} ${DOCKER_CLI_PACKAGE}-${DOCKER_VERSION} containerd.io
+# install
+yum install -y ${TF_PACKAGE}-${TF_VERSION}

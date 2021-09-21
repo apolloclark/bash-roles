@@ -8,13 +8,13 @@ IFS=$'\n\t'
 
 
 # remove old versions
-yum remove vault
+yum remove ${VAULT_PACKAGE}
 
 # install base packages
 yum install -y yum-utils
 
 # list out the previously available versions
-yum list available 'vault*' --showduplicates
+yum list available "${VAULT_PACKAGE}*" --showduplicates
 
 # install repo
 yum-config-manager \
@@ -22,7 +22,7 @@ yum-config-manager \
   https://rpm.releases.hashicorp.com/RHEL/hashicorp.repo
 
 # list out new newly available versions
-yum list 'vault' --showduplicates
+yum list ${VAULT_PACKAGE} --showduplicates
 
 # install docker
 yum install -y ${VAULT_PACKAGE}-${VAULT_VERSION}
