@@ -45,4 +45,4 @@ if [ "$DISTRO_OS" == "ubuntu" ]; then
 fi
 
 # test
-helm --version
+helm version | grep "${HELM_VERSION}"
