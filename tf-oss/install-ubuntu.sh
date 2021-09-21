@@ -6,16 +6,7 @@ IFS=$'\n\t'
 # https://docs.docker.com/install/linux/docker-ce/ubuntu/
 
 # remove old versions
-apt-get remove -y \
-  ${TF_PACKAGE} || true
-
-# install base packages
-apt-get install -y \
-    apt-transport-https \
-    ca-certificates \
-    curl \
-    gnupg-agent \
-    software-properties-common
+apt-get remove -y ${TF_PACKAGE} || true
 
 # add the HashiCorp Linux repo
 # https://www.hashicorp.com/blog/announcing-the-hashicorp-linux-repository

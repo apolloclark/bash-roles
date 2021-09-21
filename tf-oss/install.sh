@@ -36,7 +36,7 @@ fi
 
 # install Ubuntu version
 if [ "$DISTRO_OS" == "ubuntu" ]; then
-  if [ "$DISTRO_VERSION_MAJOR" -lt "18" ]; then
+  if [ "$DISTRO_VERSION_MAJOR" -lt "16" ]; then
     echo "[ERROR] Ubuntu 14.04 went End of Life (EOL) on April 30, 2019."
     exit 1;
   fi

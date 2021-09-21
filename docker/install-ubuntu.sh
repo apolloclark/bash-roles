@@ -45,4 +45,3 @@ fi
 apt-get install -y ${DOCKER_PACKAGE}=${DOCKER_PACKAGE_VERSION} \
   ${DOCKER_CLI_PACKAGE}=${DOCKER_PACKAGE_VERSION} \
   containerd.io
-# yum install docker-ce docker-ce-cli containerd.io

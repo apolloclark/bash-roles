@@ -10,6 +10,7 @@ if [[ -z "${ANSIBLE_PACKAGE-}" ]]; then
   ANSIBLE_PACKAGE="ansible"
 fi
 
+# default to installing the latest available version
 if [[ -z "${ANSIBLE_VERSION-}" ]]; then
   ANSIBLE_VERSION=$(curl -sSL https://launchpad.net/~ansible/+archive/ubuntu/ansible/+packages \
     | grep -F 'ppa~' | head -n1 | cut -d '-' -f2 | xargs
@@ -42,5 +43,5 @@ if [ "$DISTRO_OS" == "ubuntu" ]; then
   . ./install-ubuntu.sh
 fi
 
-# start docker, run test container
+# test
 ansible --version

@@ -6,20 +6,10 @@ IFS=$'\n\t'
 # https://docs.docker.com/install/linux/docker-ce/centos/
 
 # remove old versions
-yum remove docker \
-  docker-client \
-  docker-client-latest \
-  docker-common \
-  docker-latest \
-  docker-latest-logrotate \
-  docker-logrotate \
-  docker-engine
-
-# install base packages
-yum install -y yum-utils device-mapper-persistent-data lvm2
+yum remove ${TF_PACKAGE}
 
 # list out the previously available versions
-yum list available 'docker*' --showduplicates
+yum list available ${TF_PACKAGE} --showduplicates
 
 # install repo
 yum-config-manager \
@@ -30,8 +20,4 @@ yum-config-manager \
 yum list 'docker-ce' --showduplicates
 
 # install docker
-yum install -y ${DOCKER_PACKAGE}-${DOCKER_VERSION} ${DOCKER_CLI_PACKAGE}-${DOCKER_VERSION} containerd.io
-# yum install docker-ce docker-ce-cli containerd.io
-
-# (optional) install the docker systemd service file
-yum install -y iptables-services
+yum install -y ${TF_PACKAGE}-${DOCKER_VERSION} ${DOCKER_CLI_PACKAGE}-${DOCKER_VERSION} containerd.io
