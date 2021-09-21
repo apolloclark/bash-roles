@@ -18,4 +18,4 @@ apt-get update
 apt-cache policy ${HELM_PACKAGE}
 
 # install
-apt-get install -y ${HELM_PACKAGE}=${HELM_VERSION}
+apt-get install -y ${HELM_PACKAGE}=${HELM_VERSION}-1
